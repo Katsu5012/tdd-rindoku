@@ -3,10 +3,9 @@ import { Dollar } from '../value-object/Dollar'
 describe('Money', () => {
   test('掛け算できるか', () => {
     const five = new Dollar(5)
-    let product = five.times(2)
-    expect(10).toEqual(product.amount)
-    product = five.times(3)
-    expect(15).toEqual(product.amount)
+
+    expect(new Dollar(10)).toStrictEqual(five.times(2))
+    expect(new Dollar(15)).toStrictEqual(five.times(3))
   })
 
   test('等価比較できるか', () => {
